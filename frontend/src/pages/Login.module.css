@@ -1,0 +1,53 @@
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--forest-deep);
+  background-image:
+    linear-gradient(rgba(27, 43, 34, 0.55), rgba(27, 43, 34, 0.7)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(255, 255, 255, 0.035) 27px,
+      rgba(255, 255, 255, 0.035) 28px
+    );
+  padding: var(--space-5);
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-7) var(--space-6);
+  box-shadow: var(--shadow-lifted);
+}
+
+.mark {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--forest-deep);
+  margin-bottom: var(--space-1);
+}
+
+.tagline {
+  color: var(--ink-faint);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+}

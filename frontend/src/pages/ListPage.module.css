@@ -1,0 +1,75 @@
+.wrap {
+  padding: 24px 32px;
+}
+
+.searchRow {
+  margin-bottom: 16px;
+  max-width: 320px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-faint);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--text-base);
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+
+.table tbody tr:hover {
+  background: var(--forest-wash);
+}
+
+.primaryCell {
+  font-weight: 500;
+}
+
+.secondaryText {
+  color: var(--ink-faint);
+  font-size: var(--text-sm);
+}
+
+.tag {
+  display: inline-block;
+  font-size: var(--text-xs);
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--brass-wash);
+  color: var(--brass);
+  margin-right: 4px;
+}
+
+.emptyState {
+  padding: 48px 0;
+  text-align: center;
+  color: var(--ink-faint);
+}
+
+.paginationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+}
+
+.paginationButtons {
+  display: flex;
+  gap: var(--space-2);
+}

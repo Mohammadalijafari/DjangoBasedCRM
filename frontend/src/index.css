@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Design tokens — "Ledger, not dashboard"
+   A sales register aesthetic: warm paper, forest-ink text, brass for
+   pending states, hairline rules instead of card shadows. Amounts read
+   right-aligned like an account book.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --paper: #f6f4ee;
+  --paper-raised: #fbfaf6;
+  --ink: #1b2b22;
+  --ink-soft: #4a564d;
+  --ink-faint: #7c8579;
+  --forest: #2f6f4e;
+  --forest-deep: #21503a;
+  --forest-wash: #e7efe9;
+  --brass: #b8763a;
+  --brass-wash: #f5e9d8;
+  --brick: #a23b3b;
+  --brick-wash: #f6e4e0;
+  --line: #dad5c7;
+  --line-strong: #c2bba7;
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Misc */
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --shadow-card: 0 1px 2px rgba(27, 43, 34, 0.06);
+  --shadow-lifted: 0 6px 20px rgba(27, 43, 34, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::selection {
+  background: var(--forest-wash);
+  color: var(--forest-deep);
+}
