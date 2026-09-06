@@ -105,6 +105,13 @@ Organization (the company that owns the CRM)
 
 ## Running locally
 
+There are two ways to run this — pick one. Mixing them (e.g. running
+`manage.py runserver` outside Docker while `.env` still has Docker's
+hostnames) is the #1 cause of `could not translate host name "db"` /
+`"redis"` errors.
+
+### Path 1 — Docker (recommended, no local Postgres/Redis install needed)
+
 ```bash
 cp .env.example .env
 docker compose up --build
@@ -112,6 +119,35 @@ docker compose up --build
 # In a new terminal:
 docker compose exec api python manage.py migrate
 docker compose exec api python manage.py createsuperuser
+```
+
+Leave `.env` as-is — `POSTGRES_HOST=db` and the `redis://redis:...` URLs
+are correct here, because Docker's internal network resolves those
+service names automatically.
+
+### Path 2 — Local Python venv (no Docker)
+
+You need PostgreSQL and Redis actually running on your machine first
+(e.g. `brew install postgresql@16 redis && brew services start postgresql@16 redis`
+on macOS). Then:
+
+```bash
+cp .env.example .env
+```
+
+**Edit `.env`** and change every Docker service name to `localhost`:
+```
+POSTGRES_HOST=localhost
+CELERY_BROKER_URL=redis://localhost:6379/1
+CELERY_RESULT_BACKEND=redis://localhost:6379/2
+```
+
+Then:
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
 ```
 
 The API comes up at `http://localhost:8000/`. Django admin is at `/admin/`.
