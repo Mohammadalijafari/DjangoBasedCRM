@@ -29,7 +29,7 @@ services:
     command: celery -A config beat --loglevel=info
 
   db:
-    image: postgres:16-alpine
+    image: postgres:18-alpine
     environment:
       POSTGRES_USER: crm
       POSTGRES_PASSWORD: crm
